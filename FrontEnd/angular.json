@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MeanAppFront": {
+    "FrontEnd": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "MeanAppFront:build:production"
+              "buildTarget": "FrontEnd:build:production"
             },
             "development": {
-              "buildTarget": "MeanAppFront:build:development"
+              "buildTarget": "FrontEnd:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "MeanAppFront:build"
+            "buildTarget": "FrontEnd:build"
           }
         },
         "test": {
@@ -99,12 +99,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a0a44b9e-4fb3-462c-9a36-2edb177472ba"
   }
 }

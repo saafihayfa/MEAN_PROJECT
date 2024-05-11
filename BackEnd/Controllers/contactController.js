@@ -24,7 +24,7 @@ exports.addContact = async(req,res)=>{
 exports.allContacts = async(req,res)=>{
     try {
     const contacts = await Contact.find()
-    res.status(200).send({msg:"all contacts",contacts}) }
+    res.status(200).send(contacts) }
     catch (error) {
         res.status(500).send("server error")
     }
@@ -34,7 +34,7 @@ exports.deleteContact =  async (req,res)=>{
     const {id}=req.params
     try {
        await Contact.findByIdAndDelete(id)
-       res.status(200).send("contact deleted...")
+       res.status(200).send()
     }catch (error){
        res.status(500).send("server error")
     }
@@ -44,14 +44,14 @@ exports.updateContact = async (req,res)=>{
     const {id} = req.params ;
     try {
         const updateContact = await Contact.findByIdAndUpdate(id,{$set:{...req.body}},{new:true})
-        res.status(200).send({msg:"contact updated",updateContact })
+        res.status(200).send(updateContact )
     } catch (error){
         res.status(500).send("server error");
     }
 }
 
 exports.getOneContact = async (req,res)=>{
-    const {id}=req.params
+    const {id}=req.params 
     try {
        const onecontact = await Contact.findById(id)
        res.status(200).send(onecontact)

@@ -1,0 +1,48 @@
+
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #7973f0;">
+  <a class="navbar-brand" href="#">MEAN_APPLICATION</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/contacts">Contacts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">_____</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">_____</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <h4><font color="blue"> Nouveau Contact </font></h4>
+    <form (ngSubmit)="addContact()">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <td><input type="text" name="name" [(ngModel)]= "NewContact.name"  class="form-control"></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><input type="text" name="email" [(ngModel)]= "NewContact.email" class="form-control"></td>
+          </tr>
+          <tr>
+            <th>Age</th>
+            <td><input type="number" name="age" [(ngModel)]= "NewContact.age"  class="form-control"></td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="submit" value="Ajouter" name="addContact" class="btn btn-block btn-primary"  />
+    </form>
+  </div>
+</div>
+
+

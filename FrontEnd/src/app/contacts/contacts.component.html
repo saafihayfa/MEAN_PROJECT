@@ -1,0 +1,59 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #7973f0;">
+  <a class="navbar-brand" href="#">MEAN_APPLICATION</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/contacts">Contacts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">_____</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">_____</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+ 
+<br>
+<br>
+<div class="container">
+  <div class="card shadow mb-4">
+  <div class="card-body">
+     <h2><font color="blue" >  Liste des Contacts </font> </h2>
+     <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let contact of cont ">
+        <tr >
+          <td>{{contact.name}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.age}}</td>
+          <td class="material-icons" [routerLink]="['/modif_contact', contact._id]">
+            <button type="button" class="btn btn-outline-light">
+                <font color="blue">edit</font>
+            </button>
+        </td>
+          <td class='material-icons' (click)="supprimContact (contact)" ><button type="button" class="btn btn-outline-light"><font color="red">delete</font></button></td>
+        </tr>
+      </tbody>
+    </table>
+  <h6> <a href= "/ajout_contact">Ajouter un Nouveau Contact </a></h6>
+  </div>
+  </div>
+</div>
+
+
