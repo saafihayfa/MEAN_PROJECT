@@ -1,0 +1,26 @@
+
+ .card {
+    border: 1px solid #8784e5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .btn-primary,
+  .btn-danger {
+    margin-right: 10px;
+  }
+

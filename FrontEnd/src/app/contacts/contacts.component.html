@@ -21,39 +21,42 @@
   </div>
 </nav>
 
- 
-<br>
 <br>
 <div class="container">
   <div class="card shadow mb-4">
-  <div class="card-body">
-     <h2><font color="blue" >  Liste des Contacts </font> </h2>
-     <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Age</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let contact of cont ">
-        <tr >
-          <td>{{contact.name}}</td>
-          <td>{{contact.email}}</td>
-          <td>{{contact.age}}</td>
-          <td class="material-icons" [routerLink]="['/modif_contact', contact._id]">
-            <button type="button" class="btn btn-outline-light">
-                <font color="blue">edit</font>
-            </button>
-        </td>
-          <td class='material-icons' (click)="supprimContact (contact)" ><button type="button" class="btn btn-outline-light"><font color="red">delete</font></button></td>
-        </tr>
-      </tbody>
-    </table>
-  <h6> <a href= "/ajout_contact">Ajouter un Nouveau Contact </a></h6>
-  </div>
+    <div class="card-body">
+      <h2><font color="blue">Liste des Contacts</font></h2>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let contact of cont">
+          <div class="card mb-3">
+            <img class="card-img-top" src="assets/img/image1.jpg" alt="Card image cap">
+            <div class="card-body ">
+              <h5 class="card-title" class=" text-center">{{contact.name}}</h5>
+              <p class="card-text"><b>Email :</b> {{contact.email}}</p>
+              <p class="card-text"><b>Age :</b> {{contact.age}}</p>
+              <div class=" text-center">
+                <a class="material-icons" [routerLink]="['/modif_contact', contact._id]">
+                  <button type="button" class="btn btn-outline-light">
+                    <font color="blue">edit</font>
+                  </button>
+                </a>
+                <a class='material-icons' (click)="supprimContact(contact)">
+                  <button type="button" class="btn btn-outline-light">
+                    <font color="red">delete</font>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <h6><a href="/ajout_contact">Ajouter un Nouveau Contact</a></h6>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
 
